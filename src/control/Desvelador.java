@@ -4,6 +4,8 @@ import modelo.Casilla;
 import modelo.Tablero;
 
 public class Desvelador {
+	
+	//sto es una prueba del gato
 
 	private Casilla casillas[][];
 

@@ -1,5 +1,4 @@
 package control;
-
 import modelo.Casilla;
 import modelo.Tablero;
 
