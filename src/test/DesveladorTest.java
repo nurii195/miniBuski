@@ -8,6 +8,7 @@ public class DesveladorTest {
 
 	@Test
 	public void testDesvelador() {
+		int a;
 		fail("Not yet implemented");
 	}
 
