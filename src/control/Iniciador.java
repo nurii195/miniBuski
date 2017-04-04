@@ -1,9 +1,4 @@
-package control;
-import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.JButton;
-
+package control; 
 import modelo.Casilla;
 import modelo.Tablero;
 

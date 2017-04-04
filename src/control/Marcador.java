@@ -1,6 +1,10 @@
 package control;
 import java.awt.Color;
 
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import modelo.Casilla;
@@ -9,7 +13,6 @@ import modelo.Tablero;
 
 public class Marcador {
 
-	
 
 //	public void marcarCasilla(JButton boton,Tablero tablero) {
 //		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
@@ -45,10 +48,12 @@ public class Marcador {
 		else{
 			//boton.setEnabled(false);
 			if(casilla.isMinas()){
+
 				ImageIcon icono_bomba=new ImageIcon("bombita2.gif");
 				boton.setIcon(icono_bomba);
 				boton.setBackground(Color.WHITE);
-				
+		
+		
 			}
 			else if(casilla.getMinasAlrededor() > 0){
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));

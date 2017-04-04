@@ -29,6 +29,7 @@ public class ParaUIBusqui extends UIbusqui {
 	private Marcador marcador = new Marcador();
 	private Iniciador iniciador = new Iniciador();
 	private Varios auxiliar = new Varios();
+
 	
 	
 	private Tablero tablero;	
@@ -49,6 +50,7 @@ public class ParaUIBusqui extends UIbusqui {
 			System.out.println(e.getButton());
 
 			if (e.getButton() == MouseEvent.BUTTON3) {
+
 				ImageIcon icono_bomba = new ImageIcon("bandera.gif");
 				((AbstractButton) e.getSource()).setIcon(icono_bomba);
 
@@ -60,7 +62,7 @@ public class ParaUIBusqui extends UIbusqui {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// marcador.marcarCasilla((JButton) e.getSource(), tablero);
+
 
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
@@ -82,12 +84,25 @@ public class ParaUIBusqui extends UIbusqui {
 				    }
 				
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
+				
+				 try {
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("ganar.wav").getAbsoluteFile());
+				        Clip clip = AudioSystem.getClip();
+				        clip.open(audioInputStream);
+				        clip.start();
+				    } catch(Exception ex) {
+				        System.out.println("Error with playing sound.");
+				        ex.printStackTrace();
+				    }
+				
+				
 				fin();
 				break;
 
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
 				 try {
+
 				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.wav").getAbsoluteFile());
 				        Clip clip = AudioSystem.getClip();
 				        clip.open(audioInputStream);
@@ -126,7 +141,7 @@ public class ParaUIBusqui extends UIbusqui {
 		xuleta.imprimir(tablero);
 	}
 	
-	//AudioInputStream
+
 
 	protected void fin() {
 //		for (JButton[] jButtons : botones) {
