@@ -46,10 +46,13 @@ public class ParaUIBusqui extends UIbusqui {
 
 				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
 				((AbstractButton) e.getSource()).setIcon(icono_bandera);
+							
 
 			}
 		}
 	};
+	
+	
 
 	ActionListener listener = new ActionListener() {
 
@@ -132,5 +135,6 @@ public class ParaUIBusqui extends UIbusqui {
 		}
 		marcador.sincronizar(botones, tablero.getCasillas());
 	}
+	
 
 }
