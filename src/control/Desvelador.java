@@ -4,10 +4,6 @@ import modelo.Casilla;
 import modelo.Tablero;
 
 public class Desvelador {
-	
-	//sto es una prueba del gato
-	//hata el moño de esto
-	//vuelvo a grabar
 
 	private Casilla casillas[][];
 
@@ -18,8 +14,11 @@ public class Desvelador {
 
 	public void desvelarCasillas(int filas, int columnas) {
 
+		
 		Casilla casilla = casillas[filas][columnas];
-
+		if(casilla.isMarcada())
+			return;
+		
 		casilla.setVelada(false);
 
 		if (casilla.getMinasAlrededor() == 0 && !casilla.isMinas()) {
@@ -31,7 +30,7 @@ public class Desvelador {
 						Casilla casillita = casillas[i][j];
 						if (casillita.isVelada()) {
 							desvelarCasillas(i, j);
-						} 
+						}
 					}
 
 				}
