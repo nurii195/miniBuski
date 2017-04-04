@@ -33,5 +33,6 @@ public class Tablero {
 		return casillas[coordenada.getX()][coordenada.getY()];
 	}
 	
+	
 
 }

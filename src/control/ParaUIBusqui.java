@@ -101,7 +101,7 @@ public class ParaUIBusqui extends UIbusqui {
 
 	public void crearBotones(int ancho, int alto) {
 		tablero = iniciador.crearTablero(ancho, alto, 20);
-
+		
 		desvelador = new Desvelador(tablero);
 		botones = new JButton[alto][ancho];
 
