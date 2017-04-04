@@ -1,4 +1,4 @@
-package control;
+package control; 
 import modelo.Casilla;
 import modelo.Tablero;
 
@@ -40,8 +40,7 @@ public class Iniciador {
 	}
 
 	private int contarMinarAlrededor(int filas, int columnas, Casilla[][] casillas) {
-
-		int contador = 0;
+				int contador = 0;
 
 		for (int i = filas - 1; i <= filas + 1; i++) {
 			for (int j = columnas - 1; j <= columnas + 1; j++) {
@@ -50,6 +49,7 @@ public class Iniciador {
 					Casilla casilla = casillas[i][j];
 					if (casilla.isMinas() && (filas != i || columnas != j) ) {
 						contador++;
+						
 					} 
 				}
 

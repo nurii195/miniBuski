@@ -1,5 +1,7 @@
 package control;
 import java.awt.Color;
+
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -10,6 +12,7 @@ import modelo.Coordenada;
 import modelo.Tablero;
 
 public class Marcador {
+
 
 //	public void marcarCasilla(JButton boton,Tablero tablero) {
 //		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
@@ -31,6 +34,7 @@ public class Marcador {
 				Casilla casilla = casillas[i][j];
 				JButton boton = botones[i][j];
 				marcarBoton(boton, casilla);
+				
 			}
 		}
 	}
@@ -44,17 +48,18 @@ public class Marcador {
 		else{
 			//boton.setEnabled(false);
 			if(casilla.isMinas()){
-		
-				ImageIcon icono_bomba=new ImageIcon("bomba1_32.png");
+
+				ImageIcon icono_bomba=new ImageIcon("bombita2.gif");
 				boton.setIcon(icono_bomba);
-				boton.setBackground(Color.RED);
+				boton.setBackground(Color.WHITE);
+		
+		
 			}
 			else if(casilla.getMinasAlrededor() > 0){
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
 			}
 			else{
-				boton.setText("agüita");
-				boton.setBackground(Color.BLUE);
+				boton.setBackground(Color.CYAN);
 			}
 		}
 		

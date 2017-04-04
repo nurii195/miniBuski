@@ -1,5 +1,7 @@
 package control;
 
+
+
 import modelo.Casilla;
 import modelo.Coordenada;
 import modelo.Tablero;
@@ -28,14 +30,18 @@ public class ParaUIBusqui extends UIbusqui {
 	private Iniciador iniciador = new Iniciador();
 	private Varios auxiliar = new Varios();
 
-	private Tablero tablero;
+	
+	
+	private Tablero tablero;	
 	private Desvelador desvelador;
 	private Finalizador finalizador;
 	private JButton[][] botones;
+	
 
 	public ParaUIBusqui() {
 
 		crearBotones(15, 10);
+		
 	}
 
 	MouseListener listenerRaton = new MouseAdapter() {
@@ -44,7 +50,8 @@ public class ParaUIBusqui extends UIbusqui {
 			System.out.println(e.getButton());
 
 			if (e.getButton() == MouseEvent.BUTTON3) {
-				ImageIcon icono_bomba = new ImageIcon("tablero1_18_bandera.png");
+
+				ImageIcon icono_bomba = new ImageIcon("bandera.gif");
 				((AbstractButton) e.getSource()).setIcon(icono_bomba);
 
 			}
@@ -55,7 +62,8 @@ public class ParaUIBusqui extends UIbusqui {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
+
+
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
 			desvelador.desvelarCasillas(coord.getX(), coord.getY());
@@ -64,6 +72,17 @@ public class ParaUIBusqui extends UIbusqui {
 			int estado = finalizador.estado();
 			switch (estado) {
 			case Finalizador.GANADO:
+				
+				 try {
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("D:/MusicPlayer/fml.mp3").getAbsoluteFile());
+				        Clip clip = AudioSystem.getClip();
+				        clip.open(audioInputStream);
+				        clip.start();
+				    } catch(Exception ex) {
+				        System.out.println("Error with playing sound.");
+				        ex.printStackTrace();
+				    }
+				
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
 				
 				 try {
@@ -83,7 +102,7 @@ public class ParaUIBusqui extends UIbusqui {
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
 				 try {
-					 
+
 				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.wav").getAbsoluteFile());
 				        Clip clip = AudioSystem.getClip();
 				        clip.open(audioInputStream);
@@ -122,6 +141,7 @@ public class ParaUIBusqui extends UIbusqui {
 		xuleta.imprimir(tablero);
 	}
 	
+
 
 	protected void fin() {
 //		for (JButton[] jButtons : botones) {
