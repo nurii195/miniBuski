@@ -1,7 +1,5 @@
 package control;
 
-
-
 import modelo.Casilla;
 import modelo.Coordenada;
 import modelo.Tablero;
@@ -19,7 +17,10 @@ import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
@@ -123,6 +124,9 @@ public class ParaUIBusqui extends UIbusqui {
 		
 		desvelador = new Desvelador(tablero);
 		botones = new JButton[alto][ancho];
+		
+	
+		
 
 		finalizador = new Finalizador(tablero);
 
@@ -135,6 +139,8 @@ public class ParaUIBusqui extends UIbusqui {
 				botones[i][j].setActionCommand(i + "," + j);
 				botones[i][j].addMouseListener(listenerRaton);
 				panelBotones.add(botones[i][j]);
+				
+				
 			}
 
 		}
@@ -144,16 +150,45 @@ public class ParaUIBusqui extends UIbusqui {
 
 
 	protected void fin() {
-//		for (JButton[] jButtons : botones) {
-//			for (JButton jButton : jButtons) {
-//				//jButton.setEnabled(false);
-//			}
-//		}
+
 		for (Casilla[] fila : tablero.getCasillas()) {
 			for (Casilla casilla : fila) {
 				casilla.setVelada(false);
 			}
 		}
 		marcador.sincronizar(botones, tablero.getCasillas());
+	}
+	
+	private void darColor(JButton boton, Casilla casilla) {
+
+		boton.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		boton.setHorizontalAlignment(SwingConstants.CENTER);
+		boton.setBackground(Color.LIGHT_GRAY);
+		switch (casilla.getMinasAlrededor()) {
+		case 1:
+			boton.setForeground(Color.BLUE);
+			break;
+		case 2:
+			boton.setForeground(Color.YELLOW);
+			break;
+		case 3:
+			boton.setForeground(Color.RED);
+			break;
+		case 4:
+			boton.setForeground(Color.PINK);
+			break;
+		case 5:
+			boton.setForeground(Color.ORANGE);
+			break;
+		case 6:
+			boton.setForeground(Color.BLACK);
+			break;
+		case 7:
+			boton.setForeground(Color.GREEN);
+			break;
+		default:
+			boton.setBackground(Color.gray);
+			break;
+		}
 	}
 }

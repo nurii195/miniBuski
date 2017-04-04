@@ -5,10 +5,6 @@ import modelo.Tablero;
 
 public class Desvelador {
 	
-	//sto es una prueba del gato
-	//hata el moño de esto
-	//vuelvo a grabar
-
 	private Casilla casillas[][];
 
 	public Desvelador(Tablero tablero) {
