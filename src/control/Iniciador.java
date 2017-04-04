@@ -1,4 +1,8 @@
 package control;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JButton;
 
 import modelo.Casilla;
 import modelo.Tablero;
@@ -6,7 +10,11 @@ import modelo.Tablero;
 public class Iniciador {
 
 	public Tablero crearTablero(int ancho, int alto, int minas) {
-
+		
+		if(ancho <= 0 || alto <= 0 || minas > (ancho*alto)){
+			throw new IllegalArgumentException("ancho <= 0 || alto <= 0 || minas > (ancho*alto)");
+		}
+		
 		Tablero tablero = new Tablero(alto, ancho);
 		ponerMinas(minas, tablero);
 		contarMinas(tablero);
@@ -37,8 +45,7 @@ public class Iniciador {
 	}
 
 	private int contarMinarAlrededor(int filas, int columnas, Casilla[][] casillas) {
-
-		int contador = 0;
+				int contador = 0;
 
 		for (int i = filas - 1; i <= filas + 1; i++) {
 			for (int j = columnas - 1; j <= columnas + 1; j++) {
@@ -47,6 +54,7 @@ public class Iniciador {
 					Casilla casilla = casillas[i][j];
 					if (casilla.isMinas() && (filas != i || columnas != j) ) {
 						contador++;
+						
 					} 
 				}
 

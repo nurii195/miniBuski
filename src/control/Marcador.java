@@ -1,29 +1,29 @@
 package control;
-
 import java.awt.Color;
-import java.time.temporal.JulianFields;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-
 import modelo.Casilla;
 import modelo.Coordenada;
 import modelo.Tablero;
 
 public class Marcador {
 
-	public void marcarCasilla(JButton boton,Tablero tablero) {
-		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
-		Casilla casillaActual=tablero.getCasilla(coordenada);
-		if(casillaActual.isVelada()){
-			casillaActual.setMarcada(!casillaActual.isMarcada());
-			if(casillaActual.isMarcada()){
-				boton.setText(coordenada.toString());
-			}
-			else{
-				boton.setText("");
-			}
-		}
-	}
+	
+
+//	public void marcarCasilla(JButton boton,Tablero tablero) {
+//		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
+//		Casilla casillaActual=tablero.getCasilla(coordenada);
+//		if(casillaActual.isVelada()){
+//			casillaActual.setMarcada(!casillaActual.isMarcada());
+//			if(casillaActual.isMarcada()){
+//				boton.setText(coordenada.toString());
+//			}
+//			else{
+//				boton.setText("");
+//			}
+//		}
+//	}
 	
 	public void sincronizar(JButton[][] botones, Casilla[][] casillas) {
 		for (int i = 0; i < casillas.length; i++) {
@@ -31,6 +31,7 @@ public class Marcador {
 				Casilla casilla = casillas[i][j];
 				JButton boton = botones[i][j];
 				marcarBoton(boton, casilla);
+				
 			}
 		}
 	}
@@ -39,22 +40,24 @@ public class Marcador {
 		
 		if(casilla.isVelada()){
 			boton.setText("");
+			
 		}
 		else{
 			//boton.setEnabled(false);
 			if(casilla.isMinas()){
-				boton.setText("Moj");
-				boton.setForeground(Color.BLACK);
-				boton.setBackground(Color.RED);
+				ImageIcon icono_bomba=new ImageIcon("bombita2.gif");
+				boton.setIcon(icono_bomba);
+				boton.setBackground(Color.WHITE);
+				
 			}
 			else if(casilla.getMinasAlrededor() > 0){
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
 			}
 			else{
-				boton.setText("agüita");
-				boton.setBackground(Color.BLUE);
+				boton.setBackground(Color.CYAN);
 			}
 		}
 		
 	}
+	 
 }
