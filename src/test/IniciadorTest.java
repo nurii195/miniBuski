@@ -61,7 +61,7 @@ public class IniciadorTest {
 	}
 	
 	@Test
-	public void testCrearTablero2x2() {
+	public void testCrearTablero2x3() {
 		
 		Iniciador instancia= new Iniciador();
 		

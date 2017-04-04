@@ -8,8 +8,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 
 import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -63,12 +66,32 @@ public class ParaUIBusqui extends UIbusqui {
 			switch (estado) {
 			case Finalizador.GANADO:
 				
+				 try {
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("D:/MusicPlayer/fml.mp3").getAbsoluteFile());
+				        Clip clip = AudioSystem.getClip();
+				        clip.open(audioInputStream);
+				        clip.start();
+				    } catch(Exception ex) {
+				        System.out.println("Error with playing sound.");
+				        ex.printStackTrace();
+				    }
+				
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
 				fin();
 				break;
 
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
+				 try {
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.mp3").getAbsoluteFile());
+				        Clip clip = AudioSystem.getClip();
+				        clip.open(audioInputStream);
+				        clip.start();
+				    } catch(Exception ex) {
+				        System.out.println("Error with playing sound.");
+				        ex.printStackTrace();
+				    } 
+				 
 				fin();
 				break;
 			}
