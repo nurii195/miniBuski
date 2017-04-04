@@ -5,7 +5,11 @@ import modelo.Tablero;
 public class Iniciador {
 
 	public Tablero crearTablero(int ancho, int alto, int minas) {
-
+		
+		if(ancho <= 0 || alto <= 0 || minas > (ancho*alto)){
+			throw new IllegalArgumentException("ancho <= 0 || alto <= 0 || minas > (ancho*alto)");
+		}
+		
 		Tablero tablero = new Tablero(alto, ancho);
 		ponerMinas(minas, tablero);
 		contarMinas(tablero);
