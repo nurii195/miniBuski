@@ -40,7 +40,7 @@ public class Marcador {
 			else if(casilla.getMinasAlrededor() > 0){
 		
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
-				
+				boton.setBackground(Color.WHITE);
 			}
 			else{
 				boton.setBackground(Color.CYAN);
@@ -75,9 +75,7 @@ public class Marcador {
 		case 7:
 			boton.setForeground(Color.GREEN);
 			break;
-		default:
-			boton.setBackground(Color.CYAN);
-			break;
+
 		}
 	}
 	 
