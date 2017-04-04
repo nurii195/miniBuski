@@ -1,4 +1,5 @@
 package control;
+
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -6,9 +7,8 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import modelo.Casilla;
 
-
 public class Marcador {
-	
+
 	public void sincronizar(JButton[][] botones, Casilla[][] casillas) {
 		for (int i = 0; i < casillas.length; i++) {
 			for (int j = 0; j < casillas[0].length; j++) {
@@ -16,39 +16,34 @@ public class Marcador {
 				JButton boton = botones[i][j];
 				marcarBoton(boton, casilla);
 				darColor(boton, casilla);
-				
 			}
 		}
 	}
 
 	private void marcarBoton(JButton boton, Casilla casilla) {
-		
-		if(casilla.isVelada()){
-			boton.setText("");
-			
-		}
-		else{
-			
-			if(casilla.isMinas()){
 
-				ImageIcon icono_bomba=new ImageIcon("bombita2.gif");
+		if (casilla.isVelada()) {
+			boton.setText("");
+
+		} else {
+
+			if (casilla.isMinas()) {
+
+				ImageIcon icono_bomba = new ImageIcon("bombita2.gif");
 				boton.setIcon(icono_bomba);
 				boton.setBackground(Color.WHITE);
-		
-		
-			}
-			else if(casilla.getMinasAlrededor() > 0){
-		
+
+			} else if (casilla.getMinasAlrededor() > 0) {
+
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
 				boton.setBackground(Color.WHITE);
-			}
-			else{
+			} else {
 				boton.setBackground(Color.CYAN);
 			}
 		}
-		
+
 	}
-	
+
 	private void darColor(JButton boton, Casilla casilla) {
 
 		boton.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -78,5 +73,5 @@ public class Marcador {
 
 		}
 	}
-	 
+
 }

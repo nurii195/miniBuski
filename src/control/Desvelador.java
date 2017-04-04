@@ -4,7 +4,7 @@ import modelo.Casilla;
 import modelo.Tablero;
 
 public class Desvelador {
-	
+
 	private Casilla casillas[][];
 
 	public Desvelador(Tablero tablero) {
@@ -27,7 +27,7 @@ public class Desvelador {
 						Casilla casillita = casillas[i][j];
 						if (casillita.isVelada()) {
 							desvelarCasillas(i, j);
-						} 
+						}
 					}
 
 				}
