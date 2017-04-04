@@ -55,8 +55,7 @@ public class ParaUIBusqui extends UIbusqui {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// marcador.marcarCasilla((JButton) e.getSource(), tablero);
-
+			
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
 			desvelador.desvelarCasillas(coord.getX(), coord.getY());
@@ -65,9 +64,10 @@ public class ParaUIBusqui extends UIbusqui {
 			int estado = finalizador.estado();
 			switch (estado) {
 			case Finalizador.GANADO:
+				JOptionPane.showMessageDialog(null, "De puretita suerte");
 				
 				 try {
-				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("D:/MusicPlayer/fml.mp3").getAbsoluteFile());
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("ganar.wav").getAbsoluteFile());
 				        Clip clip = AudioSystem.getClip();
 				        clip.open(audioInputStream);
 				        clip.start();
@@ -76,14 +76,15 @@ public class ParaUIBusqui extends UIbusqui {
 				        ex.printStackTrace();
 				    }
 				
-				JOptionPane.showMessageDialog(null, "De puretita suerte");
+				
 				fin();
 				break;
 
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
 				 try {
-				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.mp3").getAbsoluteFile());
+					 
+				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.wav").getAbsoluteFile());
 				        Clip clip = AudioSystem.getClip();
 				        clip.open(audioInputStream);
 				        clip.start();
@@ -121,7 +122,6 @@ public class ParaUIBusqui extends UIbusqui {
 		xuleta.imprimir(tablero);
 	}
 	
-	//AudioInputStream
 
 	protected void fin() {
 //		for (JButton[] jButtons : botones) {
