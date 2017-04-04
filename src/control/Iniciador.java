@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 package control;
 import java.awt.Color;
 
 import javax.swing.JButton;
 
+=======
+package control; 
+>>>>>>> branch 'master' of https://github.com/Doritas/miniBuski.git
 import modelo.Casilla;
 import modelo.Tablero;
 
@@ -45,8 +49,7 @@ public class Iniciador {
 	}
 
 	private int contarMinarAlrededor(int filas, int columnas, Casilla[][] casillas) {
-
-		int contador = 0;
+				int contador = 0;
 
 		for (int i = filas - 1; i <= filas + 1; i++) {
 			for (int j = columnas - 1; j <= columnas + 1; j++) {
@@ -54,7 +57,12 @@ public class Iniciador {
 				if(dentroDelimites(i,j,casillas)) {
 					Casilla casilla = casillas[i][j];
 					if (casilla.isMinas() && (filas != i || columnas != j) ) {
+<<<<<<< HEAD
 						contador++;	
+=======
+						contador++;
+						
+>>>>>>> branch 'master' of https://github.com/Doritas/miniBuski.git
 					} 
 				}
 				
