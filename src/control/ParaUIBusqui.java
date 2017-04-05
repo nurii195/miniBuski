@@ -6,6 +6,7 @@ import modelo.Tablero;
 import vista.UIbusqui;
 import java.awt.event.ActionListener;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,6 +16,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 import javax.swing.JButton;
@@ -29,9 +32,12 @@ public class ParaUIBusqui extends UIbusqui {
 	private Iniciador iniciador= new Iniciador();
 	private Varios auxiliar = new Varios();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	private Tablero tablero;
 =======
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 	
 	private Tablero tablero;	
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
@@ -42,6 +48,7 @@ public class ParaUIBusqui extends UIbusqui {
 	public ParaUIBusqui() {
 
 		crearBotones(15, 10);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	}
@@ -85,12 +92,21 @@ public class ParaUIBusqui extends UIbusqui {
 	}
 
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+	}
+
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 	ActionListener listener = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+			//marcador.marcarCasilla((JButton) e.getSource(), tablero);
+			
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 			//marcador.marcarCasilla((JButton) e.getSource(), tablero);
 			
@@ -106,7 +122,10 @@ public class ParaUIBusqui extends UIbusqui {
 			switch (estado) {
 			case Finalizador.GANADO:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
@@ -128,6 +147,7 @@ public class ParaUIBusqui extends UIbusqui {
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
 <<<<<<< HEAD
+<<<<<<< HEAD
 				try {
 
 					AudioInputStream audioInputStream = AudioSystem
@@ -140,6 +160,8 @@ public class ParaUIBusqui extends UIbusqui {
 					ex.printStackTrace();
 				}
 
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 				fin();
@@ -159,6 +181,9 @@ public class ParaUIBusqui extends UIbusqui {
 		desvelador = new Desvelador(tablero);
 		botones = new JButton[alto][ancho];
 		
+<<<<<<< HEAD
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 		finalizador = new Finalizador(tablero);
 		
@@ -178,6 +203,7 @@ public class ParaUIBusqui extends UIbusqui {
 	}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -186,6 +212,8 @@ public class ParaUIBusqui extends UIbusqui {
 	protected void fin() {
 
 =======
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 
 	protected void fin() {
 		for (JButton[] jButtons : botones) {
@@ -193,6 +221,9 @@ public class ParaUIBusqui extends UIbusqui {
 				jButton.setEnabled(false);
 			}
 		}
+<<<<<<< HEAD
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 		for (Casilla[] fila : tablero.getCasillas()) {
 			for (Casilla casilla : fila) {

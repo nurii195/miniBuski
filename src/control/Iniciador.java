@@ -4,8 +4,11 @@ package control;
 =======
 package control;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 =======
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 import modelo.Casilla;
@@ -61,6 +64,9 @@ public class Iniciador {
 
 =======
 						contador++;
+<<<<<<< HEAD
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 					} 
 				}

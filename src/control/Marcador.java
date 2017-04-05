@@ -1,6 +1,7 @@
 package control;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import java.awt.Color;
 import java.awt.Font;
@@ -22,6 +23,14 @@ import java.time.temporal.JulianFields;
 import javax.swing.JButton;
 
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+
+import java.awt.Color;
+import java.time.temporal.JulianFields;
+
+import javax.swing.JButton;
+
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 import modelo.Casilla;
 <<<<<<< HEAD
 =======
@@ -31,7 +40,10 @@ import modelo.Tablero;
 public class Marcador {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 	public void marcarCasilla(JButton boton,Tablero tablero) {
 		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
 		Casilla casillaActual=tablero.getCasilla(coordenada);
@@ -46,6 +58,9 @@ public class Marcador {
 		}
 	}
 	
+<<<<<<< HEAD
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 	public void sincronizar(JButton[][] botones, Casilla[][] casillas) {
 		for (int i = 0; i < casillas.length; i++) {
@@ -54,7 +69,10 @@ public class Marcador {
 				JButton boton = botones[i][j];
 				marcarBoton(boton, casilla);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				darColor(boton, casilla);
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 			}
@@ -74,11 +92,14 @@ public class Marcador {
 		if (casilla.isVelada()) {
 			boton.setText("");
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if (casilla.isMarcada()) {
 				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
 				boton.setIcon(icono_bandera);
 				
 =======
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 		}
 		else{
 			//boton.setEnabled(false);
@@ -86,6 +107,7 @@ public class Marcador {
 				boton.setText("Moj");
 				boton.setForeground(Color.BLACK);
 				boton.setBackground(Color.RED);
+<<<<<<< HEAD
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 			}
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
@@ -99,6 +121,10 @@ public class Marcador {
 
 			} else if (casilla.getMinasAlrededor() > 0) {
 
+=======
+			}
+			else if(casilla.getMinasAlrededor() > 0){
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
 <<<<<<< HEAD
 				boton.setBackground(Color.WHITE);
@@ -109,11 +135,15 @@ public class Marcador {
 			else{
 				boton.setText("agüita");
 				boton.setBackground(Color.BLUE);
+<<<<<<< HEAD
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 			}
 		}
 
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	private void darColor(JButton boton, Casilla casilla) {
@@ -146,6 +176,8 @@ public class Marcador {
 		}
 	}
 
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 }
