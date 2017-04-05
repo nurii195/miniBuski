@@ -14,7 +14,7 @@ public class DesveladorTest {
 
 	@Test
 	public void testDesvelarCasillas() {
-		
+		// prueba
 		Coordenada coord=new Coordenada(0, 0);
 		Casilla casilla=new Casilla();
 		
