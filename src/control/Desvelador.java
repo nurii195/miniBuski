@@ -14,8 +14,11 @@ public class Desvelador {
 
 	public void desvelarCasillas(int filas, int columnas) {
 
+		
 		Casilla casilla = casillas[filas][columnas];
-
+		if(casilla.isMarcada())
+			return;
+		
 		casilla.setVelada(false);
 
 		if (casilla.getMinasAlrededor() == 0 && !casilla.isMinas()) {

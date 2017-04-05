@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 package control;
 
+=======
+package control;
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 import modelo.Casilla;
 import modelo.Tablero;
 

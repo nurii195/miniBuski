@@ -1,11 +1,23 @@
 package control;
+<<<<<<< HEAD
 
 import java.awt.Color;
 import java.awt.Font;
+=======
+
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.AbstractButton;
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import modelo.Casilla;
+<<<<<<< HEAD
+=======
+import modelo.Tablero;
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 
 public class Marcador {
 
@@ -22,9 +34,22 @@ public class Marcador {
 
 	private void marcarBoton(JButton boton, Casilla casilla) {
 
+<<<<<<< HEAD
 		if (casilla.isVelada()) {
 			boton.setText("");
 
+=======
+		if(!casilla.isMarcada())
+			boton.setIcon(null);
+		
+		if (casilla.isVelada()) {
+			boton.setText("");
+			if (casilla.isMarcada()) {
+				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
+				boton.setIcon(icono_bandera);
+				
+			}
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 		} else {
 
 			if (casilla.isMinas()) {

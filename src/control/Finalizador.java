@@ -9,6 +9,7 @@ public class Finalizador {
 	public static final int EN_CURSO = 3;
 
 	private final Casilla[][] casillas;
+	
 
 	public Finalizador(Tablero talerone) {
 		super();

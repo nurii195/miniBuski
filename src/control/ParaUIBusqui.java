@@ -40,15 +40,33 @@ public class ParaUIBusqui extends UIbusqui {
 	MouseListener listenerRaton = new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			JButton boton = (JButton) e.getSource();
+			Coordenada coord = auxiliar.obtenerCoordenada(boton);
+			Casilla casilla=tablero.getCasilla(coord);
+			
 			System.out.println(e.getButton());
 
+<<<<<<< HEAD
 			if (e.getButton() == MouseEvent.BUTTON3) {
 
 				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
 				((AbstractButton) e.getSource()).setIcon(icono_bandera);
 							
+=======
+			if (e.getButton() == MouseEvent.BUTTON3 ) {
+				if (casilla.isMarcada()) {
+					casilla.setMarcada(false);
+					
+				}else {
+					casilla.setMarcada(true);
+				}
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 
 			}
+			else{
+				casilla.setMarcada(false);
+			}
+			marcador.sincronizar(botones, tablero.getCasillas());
 		}
 	};
 	
@@ -61,6 +79,8 @@ public class ParaUIBusqui extends UIbusqui {
 
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
+			Casilla casilla=tablero.getCasilla(coord);
+			casilla.setMarcada(false);
 			desvelador.desvelarCasillas(coord.getX(), coord.getY());
 			marcador.sincronizar(botones, tablero.getCasillas());
 
@@ -125,6 +145,11 @@ public class ParaUIBusqui extends UIbusqui {
 		}
 		xuleta.imprimir(tablero);
 	}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 
 	protected void fin() {
 
@@ -135,6 +160,9 @@ public class ParaUIBusqui extends UIbusqui {
 		}
 		marcador.sincronizar(botones, tablero.getCasillas());
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 
 }
