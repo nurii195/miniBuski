@@ -1,4 +1,5 @@
-package control; 
+package control;
+
 import modelo.Casilla;
 import modelo.Tablero;
 
@@ -33,6 +34,7 @@ public class Iniciador {
 			if (!minita) {
 				casilla.setMinas(true);
 				contador++;
+				
 			}
 
 		}
@@ -48,15 +50,16 @@ public class Iniciador {
 				if(dentroDelimites(i,j,casillas)) {
 					Casilla casilla = casillas[i][j];
 					if (casilla.isMinas() && (filas != i || columnas != j) ) {
-						contador++;
-						
+
+						contador++;	
+
 					} 
 				}
-
+				
 			}
 
 		}
-
+		
 		return contador;
 
 	}
@@ -79,5 +82,5 @@ public class Iniciador {
 		}
 
 	}
-
+	
 }

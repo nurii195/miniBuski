@@ -1,7 +1,5 @@
 package control;
 
-
-
 import modelo.Casilla;
 import modelo.Coordenada;
 import modelo.Tablero;
@@ -11,7 +9,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -19,7 +16,6 @@ import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
@@ -30,18 +26,15 @@ public class ParaUIBusqui extends UIbusqui {
 	private Iniciador iniciador = new Iniciador();
 	private Varios auxiliar = new Varios();
 
-	
-	
-	private Tablero tablero;	
+	private Tablero tablero;
 	private Desvelador desvelador;
 	private Finalizador finalizador;
 	private JButton[][] botones;
-	
 
 	public ParaUIBusqui() {
 
 		crearBotones(15, 10);
-		
+
 	}
 
 	MouseListener listenerRaton = new MouseAdapter() {
@@ -51,18 +44,20 @@ public class ParaUIBusqui extends UIbusqui {
 
 			if (e.getButton() == MouseEvent.BUTTON3) {
 
-				ImageIcon icono_bomba = new ImageIcon("bandera.gif");
-				((AbstractButton) e.getSource()).setIcon(icono_bomba);
+				ImageIcon icono_bandera = new ImageIcon("bandera.gif");
+				((AbstractButton) e.getSource()).setIcon(icono_bandera);
+							
 
 			}
 		}
 	};
+	
+	
 
 	ActionListener listener = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-
 
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
@@ -72,46 +67,37 @@ public class ParaUIBusqui extends UIbusqui {
 			int estado = finalizador.estado();
 			switch (estado) {
 			case Finalizador.GANADO:
-				
-				 try {
-				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("D:/MusicPlayer/fml.mp3").getAbsoluteFile());
-				        Clip clip = AudioSystem.getClip();
-				        clip.open(audioInputStream);
-				        clip.start();
-				    } catch(Exception ex) {
-				        System.out.println("Error with playing sound.");
-				        ex.printStackTrace();
-				    }
-				
+
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
-				
-				 try {
-				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("ganar.wav").getAbsoluteFile());
-				        Clip clip = AudioSystem.getClip();
-				        clip.open(audioInputStream);
-				        clip.start();
-				    } catch(Exception ex) {
-				        System.out.println("Error with playing sound.");
-				        ex.printStackTrace();
-				    }
-				
-				
+
+				try {
+					AudioInputStream audioInputStream = AudioSystem
+							.getAudioInputStream(new File("ganar.wav").getAbsoluteFile());
+					Clip clip = AudioSystem.getClip();
+					clip.open(audioInputStream);
+					clip.start();
+				} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				}
+
 				fin();
 				break;
 
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
-				 try {
+				try {
 
-				        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("perder.wav").getAbsoluteFile());
-				        Clip clip = AudioSystem.getClip();
-				        clip.open(audioInputStream);
-				        clip.start();
-				    } catch(Exception ex) {
-				        System.out.println("Error with playing sound.");
-				        ex.printStackTrace();
-				    } 
-				 
+					AudioInputStream audioInputStream = AudioSystem
+							.getAudioInputStream(new File("perder.wav").getAbsoluteFile());
+					Clip clip = AudioSystem.getClip();
+					clip.open(audioInputStream);
+					clip.start();
+				} catch (Exception ex) {
+					System.out.println("Error with playing sound.");
+					ex.printStackTrace();
+				}
+
 				fin();
 				break;
 			}
@@ -119,11 +105,9 @@ public class ParaUIBusqui extends UIbusqui {
 	};
 
 	public void crearBotones(int ancho, int alto) {
-		tablero = iniciador.crearTablero(ancho, alto, 20);
-
+		tablero = iniciador.crearTablero(ancho, alto, 5);
 		desvelador = new Desvelador(tablero);
 		botones = new JButton[alto][ancho];
-
 		finalizador = new Finalizador(tablero);
 
 		panelBotones.setLayout(new GridLayout(0, ancho, 0, 0));
@@ -135,20 +119,15 @@ public class ParaUIBusqui extends UIbusqui {
 				botones[i][j].setActionCommand(i + "," + j);
 				botones[i][j].addMouseListener(listenerRaton);
 				panelBotones.add(botones[i][j]);
+
 			}
 
 		}
 		xuleta.imprimir(tablero);
 	}
-	
-
 
 	protected void fin() {
-//		for (JButton[] jButtons : botones) {
-//			for (JButton jButton : jButtons) {
-//				//jButton.setEnabled(false);
-//			}
-//		}
+
 		for (Casilla[] fila : tablero.getCasillas()) {
 			for (Casilla casilla : fila) {
 				casilla.setVelada(false);
@@ -156,4 +135,6 @@ public class ParaUIBusqui extends UIbusqui {
 		}
 		marcador.sincronizar(botones, tablero.getCasillas());
 	}
+	
+
 }
