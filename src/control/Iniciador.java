@@ -5,12 +5,20 @@ package control;
 package control;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 =======
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JButton;
+
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 import modelo.Casilla;
 import modelo.Tablero;
 

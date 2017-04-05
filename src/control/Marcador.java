@@ -2,14 +2,17 @@ package control;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import java.awt.Color;
 import java.awt.Font;
 =======
 
+=======
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 import java.awt.Color;
-import java.awt.Font;
 
+<<<<<<< HEAD
 import javax.swing.AbstractButton;
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 import javax.swing.ImageIcon;
@@ -34,11 +37,18 @@ import javax.swing.JButton;
 import modelo.Casilla;
 <<<<<<< HEAD
 =======
+=======
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import modelo.Casilla;
+import modelo.Coordenada;
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 import modelo.Tablero;
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
 
 public class Marcador {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -62,6 +72,24 @@ public class Marcador {
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+	
+
+//	public void marcarCasilla(JButton boton,Tablero tablero) {
+//		Coordenada coordenada=new Varios().obtenerCoordenada(boton);
+//		Casilla casillaActual=tablero.getCasilla(coordenada);
+//		if(casillaActual.isVelada()){
+//			casillaActual.setMarcada(!casillaActual.isMarcada());
+//			if(casillaActual.isMarcada()){
+//				boton.setText(coordenada.toString());
+//			}
+//			else{
+//				boton.setText("");
+//			}
+//		}
+//	}
+	
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 	public void sincronizar(JButton[][] botones, Casilla[][] casillas) {
 		for (int i = 0; i < casillas.length; i++) {
 			for (int j = 0; j < casillas[0].length; j++) {
@@ -70,16 +98,21 @@ public class Marcador {
 				marcarBoton(boton, casilla);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				darColor(boton, casilla);
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+				
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 			}
 		}
 	}
 
 	private void marcarBoton(JButton boton, Casilla casilla) {
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 		if (casilla.isVelada()) {
@@ -88,9 +121,12 @@ public class Marcador {
 =======
 		if(!casilla.isMarcada())
 			boton.setIcon(null);
+=======
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 		
-		if (casilla.isVelada()) {
+		if(casilla.isVelada()){
 			boton.setText("");
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 			if (casilla.isMarcada()) {
@@ -100,10 +136,14 @@ public class Marcador {
 =======
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+			
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 		}
 		else{
 			//boton.setEnabled(false);
 			if(casilla.isMinas()){
+<<<<<<< HEAD
 				boton.setText("Moj");
 				boton.setForeground(Color.BLACK);
 				boton.setBackground(Color.RED);
@@ -129,6 +169,17 @@ public class Marcador {
 <<<<<<< HEAD
 				boton.setBackground(Color.WHITE);
 			} else {
+=======
+				ImageIcon icono_bomba=new ImageIcon("bombita2.gif");
+				boton.setIcon(icono_bomba);
+				boton.setBackground(Color.WHITE);
+				
+			}
+			else if(casilla.getMinasAlrededor() > 0){
+				boton.setText(String.valueOf(casilla.getMinasAlrededor()));
+			}
+			else{
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 				boton.setBackground(Color.CYAN);
 =======
 			}
@@ -141,6 +192,7 @@ public class Marcador {
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 			}
 		}
+<<<<<<< HEAD
 
 	}
 <<<<<<< HEAD
@@ -180,4 +232,9 @@ public class Marcador {
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
 =======
 >>>>>>> parent of 50ed265... nuria. banderas, bombas
+=======
+		
+	}
+	 
+>>>>>>> parent of 18a49c8... nuria. Gestion bandera
 }
