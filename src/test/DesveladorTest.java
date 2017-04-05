@@ -9,7 +9,7 @@ public class DesveladorTest {
 	@Test
 	public void testDesvelarCasillas() {
 		
-		fail("Not yet implemented");
+		
 	}
 
 }

@@ -4,16 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import control.Marcador;
+
 public class MarcadorTest {
 
 	@Test
-	public void testMarcarCasilla() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testSincronizar() {
-		fail("Not yet implemented");
+		
 	}
 
 }
