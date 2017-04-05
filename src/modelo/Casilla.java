@@ -58,8 +58,6 @@ public class Casilla {
 		
 		return resultado;
 	}
-
-
 	
 	
 }

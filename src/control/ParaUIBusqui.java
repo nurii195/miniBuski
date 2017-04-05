@@ -5,6 +5,7 @@ import modelo.Coordenada;
 import modelo.Tablero;
 import vista.UIbusqui;
 import java.awt.event.ActionListener;
+<<<<<<< HEAD
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -14,6 +15,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import java.awt.GridLayout;
@@ -23,10 +26,15 @@ public class ParaUIBusqui extends UIbusqui {
 
 	private Mostrador xuleta = new Mostrador();
 	private Marcador marcador = new Marcador();
-	private Iniciador iniciador = new Iniciador();
+	private Iniciador iniciador= new Iniciador();
 	private Varios auxiliar = new Varios();
+<<<<<<< HEAD
 
 	private Tablero tablero;
+=======
+	
+	private Tablero tablero;	
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 	private Desvelador desvelador;
 	private Finalizador finalizador;
 	private JButton[][] botones;
@@ -34,6 +42,7 @@ public class ParaUIBusqui extends UIbusqui {
 	public ParaUIBusqui() {
 
 		crearBotones(15, 10);
+<<<<<<< HEAD
 
 	}
 
@@ -72,22 +81,34 @@ public class ParaUIBusqui extends UIbusqui {
 	
 	
 
+=======
+	}
+
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 	ActionListener listener = new ActionListener() {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 
+=======
+			//marcador.marcarCasilla((JButton) e.getSource(), tablero);
+			
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 			JButton boton = (JButton) e.getSource();
 			Coordenada coord = auxiliar.obtenerCoordenada(boton);
 			Casilla casilla=tablero.getCasilla(coord);
 			casilla.setMarcada(false);
 			desvelador.desvelarCasillas(coord.getX(), coord.getY());
 			marcador.sincronizar(botones, tablero.getCasillas());
-
+			
 			int estado = finalizador.estado();
 			switch (estado) {
 			case Finalizador.GANADO:
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 				JOptionPane.showMessageDialog(null, "De puretita suerte");
 
 				try {
@@ -103,9 +124,10 @@ public class ParaUIBusqui extends UIbusqui {
 
 				fin();
 				break;
-
+			
 			case Finalizador.PERDIDO:
 				JOptionPane.showMessageDialog(null, "Un mojjjjjjoooon pa ti");
+<<<<<<< HEAD
 				try {
 
 					AudioInputStream audioInputStream = AudioSystem
@@ -118,6 +140,8 @@ public class ParaUIBusqui extends UIbusqui {
 					ex.printStackTrace();
 				}
 
+=======
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 				fin();
 				break;
 			}
@@ -125,11 +149,19 @@ public class ParaUIBusqui extends UIbusqui {
 	};
 
 	public void crearBotones(int ancho, int alto) {
+<<<<<<< HEAD
 		tablero = iniciador.crearTablero(ancho, alto, 5);
 		desvelador = new Desvelador(tablero);
 		botones = new JButton[alto][ancho];
+=======
+		tablero = iniciador.crearTablero(ancho, alto, 20);
+	
+		desvelador = new Desvelador(tablero);
+		botones = new JButton[alto][ancho];
+		
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 		finalizador = new Finalizador(tablero);
-
+		
 		panelBotones.setLayout(new GridLayout(0, ancho, 0, 0));
 
 		for (int i = 0; i < alto; i++) {
@@ -137,7 +169,6 @@ public class ParaUIBusqui extends UIbusqui {
 				botones[i][j] = new JButton("");
 				botones[i][j].addActionListener(listener);
 				botones[i][j].setActionCommand(i + "," + j);
-				botones[i][j].addMouseListener(listenerRaton);
 				panelBotones.add(botones[i][j]);
 
 			}
@@ -146,6 +177,7 @@ public class ParaUIBusqui extends UIbusqui {
 		xuleta.imprimir(tablero);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -153,6 +185,15 @@ public class ParaUIBusqui extends UIbusqui {
 
 	protected void fin() {
 
+=======
+
+	protected void fin() {
+		for (JButton[] jButtons : botones) {
+			for (JButton jButton : jButtons) {
+				jButton.setEnabled(false);
+			}
+		}
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 		for (Casilla[] fila : tablero.getCasillas()) {
 			for (Casilla casilla : fila) {
 				casilla.setVelada(false);

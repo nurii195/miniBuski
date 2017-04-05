@@ -3,18 +3,18 @@ package control;
 
 =======
 package control;
+<<<<<<< HEAD
 >>>>>>> parent of b3146ef... Revert "nuria. Gestion bandera"
+=======
+
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 import modelo.Casilla;
 import modelo.Tablero;
 
 public class Iniciador {
 
 	public Tablero crearTablero(int ancho, int alto, int minas) {
-		
-		if(ancho <= 0 || alto <= 0 || minas > (ancho*alto)){
-			throw new IllegalArgumentException("ancho <= 0 || alto <= 0 || minas > (ancho*alto)");
-		}
-		
+
 		Tablero tablero = new Tablero(alto, ancho);
 		ponerMinas(minas, tablero);
 		contarMinas(tablero);
@@ -46,7 +46,8 @@ public class Iniciador {
 	}
 
 	private int contarMinarAlrededor(int filas, int columnas, Casilla[][] casillas) {
-				int contador = 0;
+
+		int contador = 0;
 
 		for (int i = filas - 1; i <= filas + 1; i++) {
 			for (int j = columnas - 1; j <= columnas + 1; j++) {
@@ -54,9 +55,13 @@ public class Iniciador {
 				if(dentroDelimites(i,j,casillas)) {
 					Casilla casilla = casillas[i][j];
 					if (casilla.isMinas() && (filas != i || columnas != j) ) {
+<<<<<<< HEAD
 
 						contador++;	
 
+=======
+						contador++;
+>>>>>>> parent of 50ed265... nuria. banderas, bombas
 					} 
 				}
 				
